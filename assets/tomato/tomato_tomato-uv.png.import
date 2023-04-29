@@ -2,17 +2,18 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3lcw7yc5oh6m"
-path.s3tc="res://.godot/imported/tomato.svg-9de2d497fbf8b841e8b01f1834350200.s3tc.ctex"
+uid="uid://bbavcs8nmifij"
+path.s3tc="res://.godot/imported/tomato_tomato-uv.png-a7dd73c9e1f0946b904c5327b935d08e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={}
 
 [deps]
 
-source_file="res://assets/tomato.svg"
-dest_files=["res://.godot/imported/tomato.svg-9de2d497fbf8b841e8b01f1834350200.s3tc.ctex"]
+source_file="res://assets/tomato/tomato_tomato-uv.png"
+dest_files=["res://.godot/imported/tomato_tomato-uv.png-a7dd73c9e1f0946b904c5327b935d08e.s3tc.ctex"]
 
 [params]
 
@@ -33,6 +34,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=0
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
