@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://col3crggpuwgb"]
+[gd_scene load_steps=6 format=3 uid="uid://col3crggpuwgb"]
 
 [ext_resource type="Material" uid="uid://dufqddil7ytrg" path="res://materials/table.tres" id="1_ejml7"]
-[ext_resource type="PackedScene" path="res://scenes/stack.tscn" id="3_3g6mi"]
+[ext_resource type="PackedScene" uid="uid://4hcs237uedlr" path="res://scenes/stack.tscn" id="3_3g6mi"]
 [ext_resource type="PackedScene" uid="uid://qr4r8ng68urf" path="res://scenes/tomato.tscn" id="3_o6sgp"]
+[ext_resource type="PackedScene" uid="uid://c8rnw76sbp20h" path="res://scenes/bread.tscn" id="4_4abe6"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_73f7q"]
 
@@ -30,3 +31,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102708, 0.0405338, 0)
 [node name="Stack3" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825862, 0.0433771, 0)
+
+[node name="Bread" parent="Stack3" instance=ExtResource("4_4abe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156686, 0)
+
+[node name="Bread2" parent="Stack3" instance=ExtResource("4_4abe6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.327299, 0)
