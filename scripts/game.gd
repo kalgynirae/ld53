@@ -1,10 +1,9 @@
 extends Node3D
 
-
 var stacks: Array[Stack]
 var active_stack: int
+var active_item: Node
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	active_stack = 0
 	for table in get_children():
@@ -14,9 +13,8 @@ func _ready():
 					stacks.push_back(stack)
 					stack.deactivate()
 	stacks[active_stack].activate()
+	active_item = null
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
@@ -28,3 +26,15 @@ func _process(_delta):
 		stacks[active_stack].deactivate()
 		active_stack = (active_stack - 1) % stacks.size()
 		stacks[active_stack].activate()
+	if Input.is_action_just_pressed("ui_up"):
+		if active_item == null:
+			var item = stacks[active_stack].pop()
+			add_child(item)
+			if item != null:
+				active_item = item
+				item.position.y = 0.5
+	if Input.is_action_just_pressed("ui_down"):
+		if active_item != null:
+			remove_child(active_item)
+			stacks[active_stack].push(active_item)
+			active_item = null

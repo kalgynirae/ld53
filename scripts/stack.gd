@@ -17,11 +17,13 @@ func deactivate():
 	$Base.visible = false
 
 func push(item: Node):
+	add_child(item)
 	items.push_back(item)
 	arrange()
 
 func pop() -> Node:
 	var item = items.pop_back()
+	remove_child(item)
 	arrange()
 	return item
 
