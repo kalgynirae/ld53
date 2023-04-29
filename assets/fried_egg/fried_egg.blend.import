@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c81wy3r58fqpq"
-path="res://.godot/imported/fried_egg.blend-9ae79878554917871a3c5d488bee2069.scn"
+path="res://.godot/imported/fried_egg.blend-f46af5eff927b841895557eddf9ebf7c.scn"
 
 [deps]
 
-source_file="res://assets/fried_egg.blend"
-dest_files=["res://.godot/imported/fried_egg.blend-9ae79878554917871a3c5d488bee2069.scn"]
+source_file="res://assets/fried_egg/fried_egg.blend"
+dest_files=["res://.godot/imported/fried_egg.blend-f46af5eff927b841895557eddf9ebf7c.scn"]
 
 [params]
 
