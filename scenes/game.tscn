@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c017w2c3tshkg"]
+[gd_scene load_steps=8 format=3 uid="uid://c017w2c3tshkg"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_wr7wq"]
-[ext_resource type="PackedScene" path="res://scenes/table.tscn" id="2_f208o"]
+[ext_resource type="PackedScene" uid="uid://col3crggpuwgb" path="res://scenes/table.tscn" id="2_f208o"]
+[ext_resource type="AudioStream" uid="uid://q234q44efc82" path="res://sounds/pickup.wav" id="3_6qo5c"]
+[ext_resource type="AudioStream" uid="uid://b62bbhfnyl357" path="res://sounds/putdown.wav" id="4_dqu62"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_41v08"]
 sky_top_color = Color(0.368627, 0.639216, 0.764706, 1)
@@ -44,3 +46,9 @@ light_color = Color(1, 0.301961, 0.301961, 1)
 light_energy = 1.762
 
 [node name="Table" parent="." instance=ExtResource("2_f208o")]
+
+[node name="pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6qo5c")
+
+[node name="putdown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dqu62")

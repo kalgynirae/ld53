@@ -27,18 +27,26 @@ func _process(_delta):
 		active_stack = (active_stack - 1) % stacks.size()
 		stacks[active_stack].activate()
 	if Input.is_action_just_pressed("ui_up"):
-		if active_item == null:
-			var item = stacks[active_stack].pop()
-			if item != null:
-				item.position.y = 0.5
-				active_item = item
+		pick_up()
 	if Input.is_action_just_pressed("ui_down"):
-		if active_item != null:
-			var active_parent = active_item.get_parent()
-			if stacks[active_stack] != active_parent:
-				var global_pos = active_item.global_position
-				active_parent.remove_child(active_item)
-				stacks[active_stack].add_child(active_item)
-				active_item.position = stacks[active_stack].to_local(global_pos)
-			stacks[active_stack].push(active_item)
-			active_item = null
+		put_down()
+
+func pick_up():
+	if active_item == null:
+		var item = stacks[active_stack].pop()
+		if item != null:
+			$pickup.play()
+			item.position.y = 0.5
+			active_item = item
+
+func put_down():
+	if active_item != null:
+		$putdown.play()
+		var active_parent = active_item.get_parent()
+		if stacks[active_stack] != active_parent:
+			var global_pos = active_item.global_position
+			active_parent.remove_child(active_item)
+			stacks[active_stack].add_child(active_item)
+			active_item.position = stacks[active_stack].to_local(global_pos)
+		stacks[active_stack].push(active_item)
+		active_item = null
