@@ -11,10 +11,10 @@ func _ready():
 	arrange()
 
 func activate():
-	$Base.visible = true
+	$Base.material_override.emission_enabled = true
 
 func deactivate():
-	$Base.visible = false
+	$Base.material_override.emission_enabled = false
 
 func push(item: Node):
 	items.push_back(item)
