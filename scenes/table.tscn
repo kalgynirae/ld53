@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Material" uid="uid://dufqddil7ytrg" path="res://materials/table.tres" id="1_ejml7"]
+[ext_resource type="PackedScene" path="res://scenes/stack.tscn" id="3_3g6mi"]
+[ext_resource type="PackedScene" path="res://scenes/tomato.tscn" id="3_o6sgp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_73f7q"]
+
+[node name="Table" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.64872, 0, 0, 0, 0.0716994, 0, 0, 0, 0.997019, 0, 0, 0)
+material_override = ExtResource("1_ejml7")
+mesh = SubResource("BoxMesh_73f7q")
+
+[node name="Stack1" parent="." instance=ExtResource("3_3g6mi")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777647, 0.040244, 0)
+
+[node name="Tomato" parent="Stack1" instance=ExtResource("3_o6sgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157754, 0)
+
+[node name="Tomato2" parent="Stack1" instance=ExtResource("3_o6sgp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350582, 0)
+
+[node name="Stack2" parent="." instance=ExtResource("3_3g6mi")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102708, 0.0405338, 0)
+
+[node name="Stack3" parent="." instance=ExtResource("3_3g6mi")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825862, 0.0433771, 0)

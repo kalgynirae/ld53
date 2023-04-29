@@ -11,9 +11,8 @@ config_version=5
 [application]
 
 config/name="LD53"
-run/main_scene="res://game.tscn"
+run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
 
 [input]
 

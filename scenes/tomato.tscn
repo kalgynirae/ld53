@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d7ish3u7wks4"]
+[gd_scene load_steps=4 format=3]
 
-[ext_resource type="Texture2D" uid="uid://duhm3cv22a18" path="res://tomato.svg" id="1_jynnm"]
+[ext_resource type="Texture2D" uid="uid://duhm3cv22a18" path="res://assets/tomato.svg" id="1_jynnm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymwhj"]
 albedo_texture = ExtResource("1_jynnm")
