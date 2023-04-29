@@ -26,6 +26,14 @@ func pop() -> Node:
 	return item
 
 func arrange():
+	var current_height = .05
 	for i in items.size():
 		items[i].position.x = 0
-		items[i].position.y = (i + 1) * .05
+		items[i].position.y = current_height
+		current_height = current_height + _get_height(items[i]) + .02
+
+func _get_height(obj):
+	for child in obj.get_children():
+		if child.has_method("get_aabb"):
+			return child.get_aabb().size.y
+	return 0.1
