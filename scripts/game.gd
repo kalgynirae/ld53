@@ -29,12 +29,16 @@ func _process(_delta):
 	if Input.is_action_just_pressed("ui_up"):
 		if active_item == null:
 			var item = stacks[active_stack].pop()
-			add_child(item)
 			if item != null:
-				active_item = item
 				item.position.y = 0.5
+				active_item = item
 	if Input.is_action_just_pressed("ui_down"):
 		if active_item != null:
-			remove_child(active_item)
+			var active_parent = active_item.get_parent()
+			if stacks[active_stack] != active_parent:
+				var global_pos = active_item.global_position
+				active_parent.remove_child(active_item)
+				stacks[active_stack].add_child(active_item)
+				active_item.position = stacks[active_stack].to_local(global_pos)
 			stacks[active_stack].push(active_item)
 			active_item = null
