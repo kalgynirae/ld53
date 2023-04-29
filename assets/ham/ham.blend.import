@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://coufxccxrce53"
-path="res://.godot/imported/ham.blend-5727ff059a5d549135a688f2da0c3b50.scn"
+path="res://.godot/imported/ham.blend-125111f93e33d419943f92c6cb0d2684.scn"
 
 [deps]
 
-source_file="res://assets/ham.blend"
-dest_files=["res://.godot/imported/ham.blend-5727ff059a5d549135a688f2da0c3b50.scn"]
+source_file="res://assets/ham/ham.blend"
+dest_files=["res://.godot/imported/ham.blend-125111f93e33d419943f92c6cb0d2684.scn"]
 
 [params]
 

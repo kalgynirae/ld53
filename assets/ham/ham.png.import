@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bokwwh8cp28hp"
-path.s3tc="res://.godot/imported/ham.png-8e1e4700f33ab1c490f376a121a5ec23.s3tc.ctex"
+path.s3tc="res://.godot/imported/ham.png-c399a2ebe58854bf17c87335c304515f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/ham.png"
-dest_files=["res://.godot/imported/ham.png-8e1e4700f33ab1c490f376a121a5ec23.s3tc.ctex"]
+source_file="res://assets/ham/ham.png"
+dest_files=["res://.godot/imported/ham.png-c399a2ebe58854bf17c87335c304515f.s3tc.ctex"]
 
 [params]
 

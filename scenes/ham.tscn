@@ -1,16 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://v4n3nye4mo30"]
+[gd_scene load_steps=4 format=3 uid="uid://divuyrkwmkeow"]
 
-[ext_resource type="PackedScene" uid="uid://coufxccxrce53" path="res://assets/ham.blend" id="1_41eev"]
+[ext_resource type="PackedScene" uid="uid://cckl0ks7de4y5" path="res://assets/ham/ham.glb" id="1_77thn"]
+[ext_resource type="Texture2D" uid="uid://ewdtyp0mu1du" path="res://assets/ham/ham_Ham.png" id="2_bivoc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jhq0"]
+albedo_texture = ExtResource("2_bivoc")
+emission_enabled = true
+emission = Color(0.25098, 0.0117647, 0, 1)
+emission_energy_multiplier = 1.2
 
 [node name="Ham" type="Node3D"]
 
-[node name="Ham" parent="." instance=ExtResource("1_41eev")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+[node name="ham" parent="." instance=ExtResource("1_77thn")]
 
-[node name="Light" parent="Ham" index="0"]
-visible = false
+[node name="Cylinder" parent="ham" index="0"]
+transform = Transform3D(0.212132, 0, -0.212132, 0, 0.025, 0, 0.212132, 0, 0.212132, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4jhq0")
 
-[node name="Camera" parent="Ham" index="1"]
-visible = false
-
-[editable path="Ham"]
+[editable path="ham"]
