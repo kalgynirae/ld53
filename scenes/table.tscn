@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://col3crggpuwgb"]
+[gd_scene load_steps=8 format=3 uid="uid://col3crggpuwgb"]
 
 [ext_resource type="Material" uid="uid://dufqddil7ytrg" path="res://materials/table.tres" id="1_ejml7"]
-[ext_resource type="PackedScene" uid="uid://4hcs237uedlr" path="res://scenes/stack.tscn" id="3_3g6mi"]
+[ext_resource type="PackedScene" uid="uid://cobfc1ahombbd" path="res://scenes/stack.tscn" id="3_3g6mi"]
 [ext_resource type="PackedScene" uid="uid://qr4r8ng68urf" path="res://scenes/tomato.tscn" id="3_o6sgp"]
-[ext_resource type="PackedScene" uid="uid://c8rnw76sbp20h" path="res://scenes/bread.tscn" id="4_4abe6"]
+[ext_resource type="PackedScene" uid="uid://66kf5fmwb134" path="res://scenes/bread.tscn" id="4_4abe6"]
+[ext_resource type="PackedScene" uid="uid://ct5m3fmigavab" path="res://scenes/fried_egg.tscn" id="5_aeho8"]
+[ext_resource type="PackedScene" uid="uid://v4n3nye4mo30" path="res://scenes/ham.tscn" id="6_vhipq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_73f7q"]
 
@@ -18,6 +20,9 @@ mesh = SubResource("BoxMesh_73f7q")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777647, 0.040244, 0)
 
+[node name="fired_egg" parent="Stack1" instance=ExtResource("5_aeho8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0359152, 0.0378368, 0)
+
 [node name="Tomato" parent="Stack1" instance=ExtResource("3_o6sgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157754, 0)
 
@@ -27,6 +32,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350582, 0)
 [node name="Stack2" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102708, 0.0405338, 0)
+
+[node name="Ham" parent="Stack2" instance=ExtResource("6_vhipq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189725, 0)
+
+[node name="Ham2" parent="Stack2" instance=ExtResource("6_vhipq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.323853, 0)
 
 [node name="Stack3" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true

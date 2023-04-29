@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://v4n3nye4mo30"]
 
-[ext_resource type="PackedScene" uid="uid://coufxccxrce53" path="res://assets/Ham.blend" id="1_41eev"]
+[ext_resource type="PackedScene" uid="uid://coufxccxrce53" path="res://assets/ham.blend" id="1_41eev"]
 
 [node name="Ham" type="Node3D"]
 

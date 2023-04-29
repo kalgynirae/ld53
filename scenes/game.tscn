@@ -67,8 +67,8 @@ script = ExtResource("1_wr7wq")
 environment = SubResource("Environment_cst5l")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.991741, 0.128259, 0, -0.128259, 0.991741, 0, 0.710555, 2.57529)
-fov = 45.0
+transform = Transform3D(1, 0, 0, 0, 0.998574, 0.0533816, 0, -0.0533816, 0.998574, 0, 0.462692, 2.11893)
+fov = 40.0
 
 [node name="CameraAnimation" type="AnimationPlayer" parent="Camera3D"]
 root_node = NodePath("../..")
