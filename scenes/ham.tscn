@@ -14,7 +14,7 @@ emission_energy_multiplier = 1.2
 [node name="ham" parent="." instance=ExtResource("1_77thn")]
 
 [node name="Cylinder" parent="ham" index="0"]
-transform = Transform3D(0.212132, 0, -0.212132, 0, 0.025, 0, 0.212132, 0, 0.212132, 0, 0, 0)
+transform = Transform3D(-0.212132, 0, 0.212132, 0, 0.025, 0, -0.212132, 0, -0.212132, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_4jhq0")
 
 [editable path="ham"]
