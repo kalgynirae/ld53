@@ -13,6 +13,12 @@ config_version=5
 config/name="LD53"
 run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+config/icon="res://assets/icon.svg"
+<<<<<<<HEADconfig/icon="res://assets/icon.svg"
+
+[filesystem]
+
+import/fbx/enabled=false
 
 [input]
 

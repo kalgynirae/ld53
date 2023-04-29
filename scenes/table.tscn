@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://col3crggpuwgb"]
 
 [ext_resource type="Material" uid="uid://dufqddil7ytrg" path="res://materials/table.tres" id="1_ejml7"]
 [ext_resource type="PackedScene" path="res://scenes/stack.tscn" id="3_3g6mi"]
-[ext_resource type="PackedScene" path="res://scenes/tomato.tscn" id="3_o6sgp"]
+[ext_resource type="PackedScene" uid="uid://qr4r8ng68urf" path="res://scenes/tomato.tscn" id="3_o6sgp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_73f7q"]
 
