@@ -1,15 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7tq8jm7gg6sb"]
+[gd_scene load_steps=4 format=3 uid="uid://dhyxtog20uvhj"]
 
-[ext_resource type="PackedScene" uid="uid://bp7l65gilou8v" path="res://assets/donut.blend" id="1_ooabx"]
+[ext_resource type="PackedScene" uid="uid://c1tieeth4ddkq" path="res://assets/donut/donut.glb" id="1_lgvap"]
+[ext_resource type="Texture2D" uid="uid://bhwa2lu4dkm0n" path="res://assets/donut/donut.png" id="2_36rdt"]
 
-[node name="donut" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3kf1r"]
+albedo_texture = ExtResource("2_36rdt")
+emission_enabled = true
+emission = Color(0.298039, 0.137255, 0, 1)
+emission_energy_multiplier = 1.5
 
-[node name="donut" parent="." instance=ExtResource("1_ooabx")]
+[node name="Donut" type="Node3D"]
 
-[node name="Light" parent="donut" index="0"]
-visible = false
+[node name="donut" parent="." instance=ExtResource("1_lgvap")]
 
-[node name="Camera" parent="donut" index="1"]
-visible = false
+[node name="Torus" parent="donut" index="0"]
+material_override = SubResource("StandardMaterial3D_3kf1r")
 
 [editable path="donut"]

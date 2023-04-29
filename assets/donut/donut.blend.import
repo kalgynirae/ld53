@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bp7l65gilou8v"
-path="res://.godot/imported/donut.blend-e616c0d1c0f70c5695c87cdff3a7ae73.scn"
+path="res://.godot/imported/donut.blend-6e31ce117a8945e9758c0e612ed40b0b.scn"
 
 [deps]
 
-source_file="res://assets/donut.blend"
-dest_files=["res://.godot/imported/donut.blend-e616c0d1c0f70c5695c87cdff3a7ae73.scn"]
+source_file="res://assets/donut/donut.blend"
+dest_files=["res://.godot/imported/donut.blend-6e31ce117a8945e9758c0e612ed40b0b.scn"]
 
 [params]
 
