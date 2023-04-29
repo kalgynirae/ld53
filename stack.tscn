@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3p0ep3eq0fh1"]
+
+[ext_resource type="Script" path="res://stack.gd" id="1_b8p5h"]
+[ext_resource type="Material" uid="uid://wl2m4q6pj61u" path="res://material/base.tres" id="2_cfdef"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vi2tu"]
+
+[node name="Stack" type="Node3D"]
+script = ExtResource("1_b8p5h")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.281387, 0, 0, 0, 1.00957, 0, 0, 0, 0.281387, 0, 0, 0)
+material_override = ExtResource("2_cfdef")
+mesh = SubResource("PlaneMesh_vi2tu")

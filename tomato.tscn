@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d7ish3u7wks4"]
+
+[ext_resource type="Texture2D" uid="uid://duhm3cv22a18" path="res://tomato.svg" id="1_jynnm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymwhj"]
+albedo_texture = ExtResource("1_jynnm")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_osxnl"]
+
+[node name="Tomato" type="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.460851, 0, 0, 0, 0.0121084, 0.00201169, 0, -5.24079e-05, 0.464753, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ymwhj")
+mesh = SubResource("CylinderMesh_osxnl")
+skeleton = NodePath("../Camera3D")
