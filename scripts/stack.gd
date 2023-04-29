@@ -50,9 +50,7 @@ func get_height(obj) -> float:
 
 func _maybe_get_height(obj):
 	if obj.has_method("get_aabb"):
-		push_warning("scale: " + str(obj.transform))
-		# TODO: This doesn't work
-		return obj.get_aabb().size.y / obj.transform.basis.get_scale().y
+		return (obj.get_aabb().size * obj.transform.basis.get_scale()).y
 	for child in obj.get_children():
 		var maybe_height = _maybe_get_height(child)
 		if maybe_height != null:
