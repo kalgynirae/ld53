@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7tq8jm7gg6sb"]
+
+[ext_resource type="PackedScene" uid="uid://bp7l65gilou8v" path="res://assets/donut.blend" id="1_ooabx"]
+
+[node name="donut" type="Node3D"]
+
+[node name="donut" parent="." instance=ExtResource("1_ooabx")]
+
+[node name="Light" parent="donut" index="0"]
+visible = false
+
+[node name="Camera" parent="donut" index="1"]
+visible = false
+
+[editable path="donut"]
