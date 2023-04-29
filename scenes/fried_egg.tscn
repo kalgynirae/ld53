@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ifussqgh2jpl"]
+
+[ext_resource type="PackedScene" uid="uid://c81wy3r58fqpq" path="res://assets/fried_egg.blend" id="1_38qac"]
+
+[node name="fired_egg" type="Node3D"]
+
+[node name="fried_egg" parent="." instance=ExtResource("1_38qac")]
+
+[node name="Light" parent="fried_egg" index="0"]
+visible = false
+
+[node name="Camera" parent="fried_egg" index="1"]
+visible = false
+
+[editable path="fried_egg"]
