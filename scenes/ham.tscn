@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://v4n3nye4mo30"]
+
+[ext_resource type="PackedScene" uid="uid://coufxccxrce53" path="res://assets/Ham.blend" id="1_41eev"]
+
+[node name="Ham" type="Node3D"]
+
+[node name="Ham" parent="." instance=ExtResource("1_41eev")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+
+[node name="Light" parent="Ham" index="0"]
+visible = false
+
+[node name="Camera" parent="Ham" index="1"]
+visible = false
+
+[editable path="Ham"]
