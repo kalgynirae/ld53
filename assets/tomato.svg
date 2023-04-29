@@ -25,11 +25,11 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.1893044"
-     inkscape:cx="373.74788"
-     inkscape:cy="677.28666"
-     inkscape:window-width="1441"
-     inkscape:window-height="1346"
+     inkscape:zoom="0.5946522"
+     inkscape:cx="204.32111"
+     inkscape:cy="823.17025"
+     inkscape:window-width="2560"
+     inkscape:window-height="1440"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -103,7 +103,10 @@
        id="path234"
        cx="105.32597"
        cy="165.72292"
-       r="72.78434" />
+       r="72.78434"
+       inkscape:export-filename="tomato-256.png"
+       inkscape:export-xdpi="43.014202"
+       inkscape:export-ydpi="43.014202" />
     <circle
        style="fill:#cc0000;fill-opacity:0.69947;stroke:none;stroke-width:1.665;stop-color:#000000"
        id="path234-3"
