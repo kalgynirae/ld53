@@ -14,6 +14,7 @@ func _ready():
 					stack.deactivate()
 	stacks[active_stack].activate()
 	active_item = null
+	$Camera3D/CameraAnimation.play("pan_in")
 
 func _process(_delta):
 	if Input.is_action_pressed("quit"):
