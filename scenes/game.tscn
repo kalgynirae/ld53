@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c017w2c3tshkg"]
+[gd_scene load_steps=10 format=3 uid="uid://c017w2c3tshkg"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_wr7wq"]
 [ext_resource type="PackedScene" uid="uid://col3crggpuwgb" path="res://scenes/table.tscn" id="2_f208o"]
@@ -32,7 +32,7 @@ tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1.51572, 0.392292),
+"transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [Vector3(0, 0.710555, 2.57529), Vector3(0, 0.627653, 2.11893)]
 }
@@ -40,45 +40,17 @@ tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Camera3D:fov")
-tracks/1/interp = 1
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(1, 1),
+"transitions": PackedFloat32Array(0.5, 1),
 "update": 0,
 "values": [45.0, 40.0]
 }
 
-[sub_resource type="Animation" id="Animation_6nbnp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.548662, 1.97148)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:fov")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [37.8493]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y2pef"]
 _data = {
-"RESET": SubResource("Animation_6nbnp"),
 "pan_in": SubResource("Animation_u1m8j")
 }
 
@@ -89,8 +61,8 @@ script = ExtResource("1_wr7wq")
 environment = SubResource("Environment_cst5l")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.991741, 0.128259, 0, -0.128259, 0.991741, 0, 0.548662, 1.97148)
-fov = 37.8493
+transform = Transform3D(1, 0, 0, 0, 0.991741, 0.128259, 0, -0.128259, 0.991741, 0, 0.710555, 2.57529)
+fov = 45.0
 
 [node name="CameraAnimation" type="AnimationPlayer" parent="Camera3D"]
 root_node = NodePath("../..")
@@ -116,6 +88,8 @@ light_energy = 1.762
 
 [node name="pickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6qo5c")
+volume_db = -16.0
 
 [node name="putdown" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dqu62")
+volume_db = -16.0
