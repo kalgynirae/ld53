@@ -28,14 +28,14 @@ light_energy = 1.457
 
 [node name="Stack1" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777647, 0.0555936, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777647, 0.040244, 0)
 
 [node name="Tomato" parent="Stack1" instance=ExtResource("3_o6sgp")]
 
 [node name="Stack2" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102708, 0.0650932, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102708, 0.0405338, 0)
 
 [node name="Stack3" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825862, 0.0587269, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825862, 0.0433771, 0)

@@ -15,5 +15,6 @@ func _process(_delta):
 func activate():
 	$Base.visible = true
 
+
 func deactivate():
 	$Base.visible = false
