@@ -11,7 +11,6 @@ func _ready():
 			for stack in table.get_children():
 				if stack.name.begins_with("Stack"):
 					stacks.push_back(stack)
-					stack.deactivate()
 	stacks[active_stack].activate()
 	active_item = null
 	$Camera3D/CameraAnimation.play("pan_in")
