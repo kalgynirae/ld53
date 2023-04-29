@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c017w2c3tshkg"]
+[gd_scene load_steps=13 format=3 uid="uid://c017w2c3tshkg"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_wr7wq"]
 [ext_resource type="PackedScene" uid="uid://col3crggpuwgb" path="res://scenes/table.tscn" id="2_f208o"]
+[ext_resource type="Texture2D" uid="uid://cvr6ol60c2dm1" path="res://assets/title-text/title-text.png" id="2_xi8ra"]
 [ext_resource type="AudioStream" uid="uid://q234q44efc82" path="res://sounds/pickup.wav" id="3_6qo5c"]
 [ext_resource type="AudioStream" uid="uid://b62bbhfnyl357" path="res://sounds/putdown.wav" id="4_dqu62"]
 [ext_resource type="AudioStream" uid="uid://btwqx1uwkk4yc" path="res://music/music.ogg" id="5_w8c3k"]
@@ -30,7 +31,7 @@ glow_hdr_threshold = 0.8
 
 [sub_resource type="Animation" id="Animation_u1m8j"]
 resource_name = "pan_in"
-length = 2.5
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -55,9 +56,37 @@ tracks/1/keys = {
 "update": 0,
 "values": [45.0, 40.0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.8, 5.4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.349066, 0, 0), Vector3(0.314159, 0, 0), Vector3(-0.279253, 0, 0), Vector3(0.244346, 0, 0), Vector3(-0.20944, 0, 0), Vector3(0.174533, 0, 0), Vector3(-0.139626, 0, 0), Vector3(0.10472, 0, 0), Vector3(-0.0698132, 0, 0), Vector3(0.0349066, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2lgxr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y2pef"]
 _data = {
+"RESET": SubResource("Animation_2lgxr"),
 "pan_in": SubResource("Animation_u1m8j")
 }
 
@@ -68,7 +97,7 @@ script = ExtResource("1_wr7wq")
 environment = SubResource("Environment_cst5l")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.998574, 0.0533816, 0, -0.0533816, 0.998574, 0, 0.462692, 2.11893)
+transform = Transform3D(1, 0, 0, 0, 0.998574, 0.0533816, 0, -0.0533816, 0.998574, 0, 0.627653, 2.11893)
 fov = 40.0
 
 [node name="CameraAnimation" type="AnimationPlayer" parent="Camera3D"]
@@ -96,6 +125,12 @@ transform = Transform3D(3.09086e-08, 0.707107, 0.707107, 3.09086e-08, -0.707107,
 light_color = Color(1, 0.4, 0.901961, 1)
 shadow_enabled = true
 shadow_opacity = 0.5
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23974, -0.59195)
+offset = Vector2(0, -110)
+pixel_size = 0.002
+texture = ExtResource("2_xi8ra")
 
 [node name="Table" parent="." instance=ExtResource("2_f208o")]
 
