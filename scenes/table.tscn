@@ -39,6 +39,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.189725, 0)
 [node name="Ham2" parent="Stack2" instance=ExtResource("6_vhipq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.323853, 0)
 
+[node name="Bread3" parent="Stack2" instance=ExtResource("4_4abe6")]
+
 [node name="Stack3" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825862, 0.0433771, 0)
