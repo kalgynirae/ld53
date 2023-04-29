@@ -22,14 +22,18 @@ func push(item: Node):
 
 func pop() -> Node:
 	var item = items.pop_back()
-	arrange()
 	return item
 
 func arrange():
 	var current_height = .05
+	var tween = get_tree().create_tween()
 	for i in items.size():
-		items[i].position.x = 0
-		items[i].position.y = current_height
+		var new_position = items[i].position
+		new_position.x = 0
+		new_position.y = current_height
+		var position_diff = items[i].position - new_position
+		if position_diff.length() > .02:
+			tween.tween_property(items[i], "position", new_position, 0.1)
 		current_height = current_height + _get_height(items[i]) + .02
 
 func _get_height(obj):

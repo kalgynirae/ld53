@@ -35,8 +35,9 @@ func pick_up():
 	if active_item == null:
 		var item = stacks[active_stack].pop()
 		if item != null:
+			var tween = get_tree().create_tween()
 			$pickup.play()
-			item.position.y = 0.5
+			tween.tween_property(item, "position:y", 0.5, 0.1)
 			active_item = item
 
 func put_down():
