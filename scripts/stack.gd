@@ -27,23 +27,37 @@ func pop() -> Node:
 	return item
 
 func arrange():
-	var current_height = .05
+	var current_height = $nonitems/Base.position.y + $nonitems/Base.get_aabb().size.y / 2
 	var tween = get_tree().create_tween()
 	for i in items.size():
+		var item_height = get_height(items[i])
 		var new_position = items[i].position
 		new_position.x = 0
-		new_position.y = current_height
+		new_position.y = current_height + item_height / 2
 		var position_diff = items[i].position - new_position
 		if position_diff.length() > .02:
 			tween.tween_property(items[i], "position", new_position, 0.1)
-		current_height = current_height + _get_height(items[i]) + .02
+		current_height = current_height + item_height
 	check_for_sandwich()
 
-func _get_height(obj):
+func get_height(obj) -> float:
+	var maybe_height = _maybe_get_height(obj)
+	if maybe_height > 0:
+		push_warning("obj " + obj.name + " has height " + str(maybe_height))
+		return maybe_height
+	push_warning("no child has get_aabb for obj with name " + obj.name)
+	return 0.
+
+func _maybe_get_height(obj):
+	if obj.has_method("get_aabb"):
+		push_warning("scale: " + str(obj.transform))
+		# TODO: This doesn't work
+		return obj.get_aabb().size.y / obj.transform.basis.get_scale().y
 	for child in obj.get_children():
-		if child.has_method("get_aabb"):
-			return child.get_aabb().size.y
-	return 0.1
+		var maybe_height = _maybe_get_height(child)
+		if maybe_height != null:
+			return maybe_height
+	return null
 
 func check_for_sandwich():
 	print(items)
