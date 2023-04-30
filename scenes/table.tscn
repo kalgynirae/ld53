@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://col3crggpuwgb"]
 
 [ext_resource type="Material" uid="uid://dufqddil7ytrg" path="res://materials/table.tres" id="1_ejml7"]
-[ext_resource type="PackedScene" path="res://scenes/stack.tscn" id="3_3g6mi"]
+[ext_resource type="PackedScene" uid="uid://cxioh0lltdv0h" path="res://scenes/stack.tscn" id="3_3g6mi"]
 [ext_resource type="PackedScene" path="res://scenes/tomato.tscn" id="3_o6sgp"]
 [ext_resource type="PackedScene" path="res://scenes/bread.tscn" id="4_4abe6"]
 [ext_resource type="PackedScene" path="res://scenes/fried_egg.tscn" id="5_aeho8"]

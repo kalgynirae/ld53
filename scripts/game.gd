@@ -5,6 +5,7 @@ var active_stack: int
 var active_item: Node
 var score: int = 0
 var started: bool = false
+var steps: int = 0
 
 var Bread = preload("res://scenes/bread.tscn")
 var Donut = preload("res://scenes/donut.tscn")
@@ -64,6 +65,7 @@ func _input(event):
 
 func pick_up():
 	if active_item == null:
+		steps += 1
 		var item = stacks[active_stack].pop()
 		if item != null:
 			var tween = get_tree().create_tween()
@@ -73,6 +75,7 @@ func pick_up():
 
 func put_down():
 	if active_item != null:
+		steps += 1
 		$putdown.play()
 		var active_parent = active_item.get_parent()
 		if stacks[active_stack] != active_parent:
@@ -117,6 +120,7 @@ func refill(completed_stack):
 			var possible = [FriedEgg, Ham, Tomato]
 			var newitem = possible[randi() % possible.size()].instantiate()
 			stacks[randi() % stacks.size()].spawn(newitem)
+		steps = 0
 
 func format_number(n: int) -> String:
 	if n < 1000:
