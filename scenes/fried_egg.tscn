@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://doq7h81jkjgwi"]
 
 [ext_resource type="PackedScene" uid="uid://dgntkm5iydgcv" path="res://assets/fried_egg/fried_egg.glb" id="1_pjpjx"]
 [ext_resource type="Script" path="res://scripts/fried_egg.gd" id="1_xohmr"]

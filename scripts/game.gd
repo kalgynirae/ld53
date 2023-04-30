@@ -46,6 +46,7 @@ func _process(_delta):
 			pick_up()
 		if Input.is_action_just_pressed("ui_down"):
 			put_down()
+		%ScorePanel/%StepsText.text = str(steps)
 
 func _input(event):
 	if started:
