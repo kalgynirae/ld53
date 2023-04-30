@@ -27,22 +27,34 @@ func start():
 	started = true
 
 func _process(_delta):
-	if not started and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		start()
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
-	if started and Input.is_action_just_pressed("ui_right"):
-		stacks[active_stack].deactivate()
-		active_stack = (active_stack + 1) % stacks.size()
-		stacks[active_stack].activate()
-	if started and Input.is_action_just_pressed("ui_left"):
-		stacks[active_stack].deactivate()
-		active_stack = (active_stack - 1) % stacks.size()
-		stacks[active_stack].activate()
-	if started and Input.is_action_just_pressed("ui_up"):
-		pick_up()
-	if started and Input.is_action_just_pressed("ui_down"):
-		put_down()
+	if not started:
+		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			start()
+	else:
+		if Input.is_action_just_pressed("ui_right"):
+			stacks[active_stack].deactivate()
+			active_stack = (active_stack + 1) % stacks.size()
+			stacks[active_stack].activate()
+		if Input.is_action_just_pressed("ui_left"):
+			stacks[active_stack].deactivate()
+			active_stack = (active_stack - 1) % stacks.size()
+			stacks[active_stack].activate()
+		if Input.is_action_just_pressed("ui_up"):
+			pick_up()
+		if Input.is_action_just_pressed("ui_down"):
+			put_down()
+
+func _input(event):
+	if started:
+		if event is InputEventMouseButton and event.is_pressed():
+			var viewport_size = get_viewport().get_visible_rect().size
+			var two_thirds_height = viewport_size.y * 2 / 3
+			if event.position.y > two_thirds_height:
+				var one_third_width = viewport_size.x / 3
+				var stacki = floor(event.position.x / one_third_width)
+				print("Mouse Click/Unclick at: ", event.position, " stack ", stacki)
 
 func pick_up():
 	if active_item == null:

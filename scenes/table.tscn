@@ -18,7 +18,7 @@ mesh = SubResource("BoxMesh_73f7q")
 
 [node name="Stack1" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777647, 0.040244, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.84, 0.04, 0)
 
 [node name="Tomato" parent="Stack1" instance=ExtResource("3_o6sgp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157754, 0)
@@ -31,7 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.350582, 0)
 
 [node name="Stack2" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0102708, 0.0405338, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
 
 [node name="Ham" parent="Stack2" instance=ExtResource("6_vhipq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0558021, 0)
@@ -41,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.323853, 0)
 
 [node name="Stack3" parent="." instance=ExtResource("3_3g6mi")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825862, 0.0433771, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84, 0.04, 0)
 
 [node name="Bread" parent="Stack3" instance=ExtResource("4_4abe6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.156686, 0)
