@@ -64,6 +64,7 @@ func check_and_score():
 	for stack in stacks:
 		var new_score = stack.check_for_sandwich()
 		if new_score > 0:
+			%CelebrationAnimation.play("celebrate")
 			stack.celebrate()
 			stack.clear()
 			refill(stack)
