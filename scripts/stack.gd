@@ -38,7 +38,6 @@ func arrange():
 		if position_diff.length() > .02:
 			tween.tween_property(items[i], "position", new_position, 0.1)
 		current_height = current_height + item_height
-	check_for_sandwich()
 
 func get_height(obj) -> float:
 	var maybe_height = _maybe_get_height(obj)
@@ -57,10 +56,22 @@ func _maybe_get_height(obj):
 			return maybe_height
 	return null
 
-func check_for_sandwich():
-	print(items)
+func check_for_sandwich() -> int:
+	var ingredient_name_regex = RegEx.new()
+	ingredient_name_regex.compile("\\w+")
 	if items.size() > 2 and items[0].name.begins_with("Bread") and items[-1].name.begins_with("Bread"):
-		celebrate()
+		var no_doubles_multiplier = 2
+		var unique_ingredients = {}
+		var last_seen_ingredient = ""
+		for i in range(1, items.size() - 1):
+			var ingredient_name = ingredient_name_regex.search(items[i].name).get_string()
+			if ingredient_name == last_seen_ingredient:
+				no_doubles_multiplier = 0.5
+			if not unique_ingredients.has(ingredient_name):
+				unique_ingredients[ingredient_name] = true
+			last_seen_ingredient = ingredient_name
+		return int(1000 * (unique_ingredients.size()) * no_doubles_multiplier + 500 * (items.size() - 2))
+	return 0
 
 func celebrate():
 	$nonitems/Animation.play("celebrate")

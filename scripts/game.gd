@@ -3,6 +3,7 @@ extends Node3D
 var stacks: Array[Stack]
 var active_stack: int
 var active_item: Node
+var score: int = 0
 
 func _ready():
 	active_stack = 0
@@ -51,3 +52,21 @@ func put_down():
 			active_item.position = stacks[active_stack].to_local(global_pos)
 		stacks[active_stack].push(active_item)
 		active_item = null
+	check_and_score()
+
+func check_and_score():
+	for stack in stacks:
+		var new_score = stack.check_for_sandwich()
+		if new_score > 0:
+			stack.celebrate()
+		score += new_score
+	%ScorePanel/%ScoreText.text = format_number(score)
+
+func format_number(n: int) -> String:
+	if n < 1000:
+		return str(n)
+	var formatted = ""
+	while n >= 1000:
+		formatted = ",%03d%s" % [n % 1000, formatted]
+		n /= 1000
+	return "%d%s" % [n, formatted]

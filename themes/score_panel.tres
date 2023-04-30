@@ -4,4 +4,6 @@
 
 [resource]
 default_font = ExtResource("1_gu5pa")
-default_font_size = 40
+default_font_size = 38
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+MarginContainer/colors/background_color = Color(0, 0, 0, 0.462745)

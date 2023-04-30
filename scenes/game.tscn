@@ -280,6 +280,7 @@ pixel_size = 0.002
 texture = ExtResource("2_xi8ra")
 
 [node name="ScorePanel" parent="." instance=ExtResource("3_niq0p")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40302, 0.802241, -0.590429)
 
 [node name="Table" parent="." instance=ExtResource("2_f208o")]
