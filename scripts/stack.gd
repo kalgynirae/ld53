@@ -48,7 +48,6 @@ func arrange():
 func get_height(obj) -> float:
 	var maybe_height = _maybe_get_height(obj)
 	if maybe_height > 0:
-		push_warning("obj " + obj.name + " has height " + str(maybe_height))
 		return maybe_height
 	push_warning("no child has get_aabb for obj with name " + obj.name)
 	return 0.

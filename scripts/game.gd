@@ -89,7 +89,7 @@ func refill(completed_stack):
 			var bread = Bread.instantiate()
 			stacks[stacki].spawn(bread)
 		for i in range(randi() % 3 + 5):
-			var possible = [FriedEgg, Ham, Tomato, Donut]
+			var possible = [FriedEgg, Ham, Tomato]
 			var newitem = possible[randi() % possible.size()].instantiate()
 			stacks[randi() % stacks.size()].spawn(newitem)
 
