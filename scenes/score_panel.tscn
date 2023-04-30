@@ -30,5 +30,6 @@ text = "Score: "
 layout_mode = 2
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+offset = Vector2(0, -34)
 pixel_size = 0.003
 texture = SubResource("ViewportTexture_iu2v2")
