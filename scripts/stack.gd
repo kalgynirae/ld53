@@ -18,6 +18,12 @@ func activate():
 func deactivate():
 	queued_active = false
 
+func spawn(item: Node):
+	add_child(item)
+	items.push_back(item)
+	item.position.y = 2
+	arrange()
+
 func push(item: Node):
 	items.push_back(item)
 	arrange()
@@ -57,14 +63,12 @@ func _maybe_get_height(obj):
 	return null
 
 func check_for_sandwich() -> int:
-	var ingredient_name_regex = RegEx.new()
-	ingredient_name_regex.compile("\\w+")
-	if items.size() > 2 and items[0].name.begins_with("Bread") and items[-1].name.begins_with("Bread"):
+	if items.size() > 2 and items[0].itemtype == "bread" and items[-1].itemtype == "bread":
 		var no_doubles_multiplier = 2
 		var unique_ingredients = {}
 		var last_seen_ingredient = ""
 		for i in range(1, items.size() - 1):
-			var ingredient_name = ingredient_name_regex.search(items[i].name).get_string()
+			var ingredient_name = items[i].itemtype
 			if ingredient_name == last_seen_ingredient:
 				no_doubles_multiplier = 0.5
 			if not unique_ingredients.has(ingredient_name):
@@ -75,6 +79,11 @@ func check_for_sandwich() -> int:
 
 func celebrate():
 	$nonitems/Animation.play("celebrate")
+
+func clear():
+	for item in items:
+		remove_child(item)
+	items.clear()
 
 func _process(_delta):
 	if queued_active != null:

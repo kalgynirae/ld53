@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhyxtog20uvhj"]
+[gd_scene load_steps=5 format=3]
 
+[ext_resource type="Script" path="res://scripts/donut.gd" id="1_3pgke"]
 [ext_resource type="PackedScene" uid="uid://c1tieeth4ddkq" path="res://assets/donut/donut.glb" id="1_lgvap"]
 [ext_resource type="Texture2D" uid="uid://bhwa2lu4dkm0n" path="res://assets/donut/donut.png" id="2_36rdt"]
 
@@ -10,6 +11,8 @@ emission = Color(0.298039, 0.137255, 0, 1)
 emission_energy_multiplier = 1.5
 
 [node name="Donut" type="Node3D"]
+script = ExtResource("1_3pgke")
+itemtype = "donut"
 
 [node name="donut" parent="." instance=ExtResource("1_lgvap")]
 

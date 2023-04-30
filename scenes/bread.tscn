@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://66kf5fmwb134"]
+[gd_scene load_steps=5 format=3]
 
+[ext_resource type="Script" path="res://scripts/bread.gd" id="1_7hhkj"]
 [ext_resource type="PackedScene" uid="uid://chtgk26l06pp1" path="res://assets/bread/bread.glb" id="1_b4wef"]
 [ext_resource type="Texture2D" uid="uid://b0o8arpvdqmxm" path="res://assets/bread/bread_bread.png" id="2_3oglq"]
 
@@ -10,6 +11,8 @@ emission = Color(0.188235, 0.0901961, 0, 1)
 emission_energy_multiplier = 1.5
 
 [node name="Bread" type="Node3D"]
+script = ExtResource("1_7hhkj")
+itemtype = "bread"
 
 [node name="bread" parent="." instance=ExtResource("1_b4wef")]
 

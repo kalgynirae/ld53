@@ -5,6 +5,12 @@ var active_stack: int
 var active_item: Node
 var score: int = 0
 
+var Bread = preload("res://scenes/bread.tscn")
+var Donut = preload("res://scenes/donut.tscn")
+var FriedEgg = preload("res://scenes/fried_egg.tscn")
+var Ham = preload("res://scenes/ham.tscn")
+var Tomato = preload("res://scenes/tomato.tscn")
+
 func _ready():
 	active_stack = 0
 	for table in get_children():
@@ -59,8 +65,33 @@ func check_and_score():
 		var new_score = stack.check_for_sandwich()
 		if new_score > 0:
 			stack.celebrate()
+			stack.clear()
+			refill(stack)
 		score += new_score
 	%ScorePanel/%ScoreText.text = format_number(score)
+
+func refill(completed_stack):
+	var counts = {}
+	var total_ingredients = 0
+	for stack in stacks:
+		for item in stack.items:
+			if not counts.has(item.itemtype):
+				counts[item.itemtype] = 0
+			counts[item.itemtype] += 1
+			total_ingredients += 1
+	if total_ingredients > 0:
+		for i in range(2):
+			var bread = Bread.instantiate()
+			completed_stack.spawn(bread)
+	else:
+		for i in range(2):
+			var stacki = randi() % stacks.size()
+			var bread = Bread.instantiate()
+			stacks[stacki].spawn(bread)
+		for i in range(randi() % 3 + 5):
+			var possible = [FriedEgg, Ham, Tomato, Donut]
+			var newitem = possible[randi() % possible.size()].instantiate()
+			stacks[randi() % stacks.size()].spawn(newitem)
 
 func format_number(n: int) -> String:
 	if n < 1000:

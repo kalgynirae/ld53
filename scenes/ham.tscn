@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://divuyrkwmkeow"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cckl0ks7de4y5" path="res://assets/ham/ham.glb" id="1_77thn"]
+[ext_resource type="Script" path="res://scripts/ham.gd" id="1_iyn04"]
 [ext_resource type="Texture2D" uid="uid://ewdtyp0mu1du" path="res://assets/ham/ham_Ham.png" id="2_bivoc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4jhq0"]
@@ -10,6 +11,8 @@ emission = Color(0.25098, 0.0117647, 0, 1)
 emission_energy_multiplier = 1.2
 
 [node name="Ham" type="Node3D"]
+script = ExtResource("1_iyn04")
+itemtype = "ham"
 
 [node name="ham" parent="." instance=ExtResource("1_77thn")]
 
