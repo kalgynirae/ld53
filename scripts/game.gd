@@ -54,7 +54,13 @@ func _input(event):
 			if event.position.y > two_thirds_height:
 				var one_third_width = viewport_size.x / 3
 				var stacki = floor(event.position.x / one_third_width)
-				print("Mouse Click/Unclick at: ", event.position, " stack ", stacki)
+				stacks[active_stack].deactivate()
+				active_stack = stacki
+				stacks[active_stack].activate()
+				if active_item == null:
+					pick_up()
+				else:
+					put_down()
 
 func pick_up():
 	if active_item == null:
