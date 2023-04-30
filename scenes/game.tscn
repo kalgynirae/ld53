@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c017w2c3tshkg"]
+[gd_scene load_steps=22 format=3 uid="uid://c017w2c3tshkg"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_wr7wq"]
 [ext_resource type="PackedScene" uid="uid://col3crggpuwgb" path="res://scenes/table.tscn" id="2_f208o"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cm3oi1bnwxfy1" path="res://music/bells.wav" id="8_ruy6s"]
 [ext_resource type="AudioStream" uid="uid://dat2731ae1pkn" path="res://sounds/squeak2.wav" id="8_vd7g1"]
 [ext_resource type="AudioStream" uid="uid://b3ymkyp1sxkuc" path="res://music/celebrate.wav" id="9_wmhr0"]
+[ext_resource type="Texture2D" uid="uid://s6hta4ujmysr" path="res://assets/click-to-start/click-to-start.svg" id="12_6uajq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_41v08"]
 sky_top_color = Color(0.368627, 0.639216, 0.764706, 1)
@@ -239,6 +240,21 @@ _data = {
 "pan_in": SubResource("Animation_u1m8j")
 }
 
+[sub_resource type="Animation" id="Animation_u3imv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Bells:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+
 [sub_resource type="Animation" id="Animation_xc4tu"]
 resource_name = "celebrate"
 length = 4.0
@@ -265,21 +281,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [-80.0, -8.0, -8.0, -80.0]
-}
-
-[sub_resource type="Animation" id="Animation_u3imv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Bells:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-80.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0o0h7"]
@@ -348,13 +349,11 @@ volume_db = -16.0
 unique_name_in_owner = true
 stream = ExtResource("7_iw5mt")
 volume_db = -8.0
-autoplay = true
 
 [node name="Bells" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("8_ruy6s")
 volume_db = -80.0
-autoplay = true
 
 [node name="Celebrate" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
@@ -374,3 +373,8 @@ volume_db = -16.0
 [node name="squeak2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vd7g1")
 volume_db = -16.0
+
+[node name="ClickToStart" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.699286, 2.45279)
+pixel_size = 0.0002
+texture = ExtResource("12_6uajq")

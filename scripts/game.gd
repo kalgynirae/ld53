@@ -4,6 +4,7 @@ var stacks: Array[Stack]
 var active_stack: int
 var active_item: Node
 var score: int = 0
+var started: bool = false
 
 var Bread = preload("res://scenes/bread.tscn")
 var Donut = preload("res://scenes/donut.tscn")
@@ -11,7 +12,7 @@ var FriedEgg = preload("res://scenes/fried_egg.tscn")
 var Ham = preload("res://scenes/ham.tscn")
 var Tomato = preload("res://scenes/tomato.tscn")
 
-func _ready():
+func start():
 	active_stack = 0
 	for table in get_children():
 		if table.name.begins_with("Table"):
@@ -21,21 +22,26 @@ func _ready():
 	stacks[active_stack].activate()
 	active_item = null
 	$Camera3D/CameraAnimation.play("pan_in")
+	%Music.playing = true
+	%Bells.playing = true
+	started = true
 
 func _process(_delta):
+	if not started and Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		start()
 	if Input.is_action_pressed("quit"):
 		get_tree().quit()
-	if Input.is_action_just_pressed("ui_right"):
+	if started and Input.is_action_just_pressed("ui_right"):
 		stacks[active_stack].deactivate()
 		active_stack = (active_stack + 1) % stacks.size()
 		stacks[active_stack].activate()
-	if Input.is_action_just_pressed("ui_left"):
+	if started and Input.is_action_just_pressed("ui_left"):
 		stacks[active_stack].deactivate()
 		active_stack = (active_stack - 1) % stacks.size()
 		stacks[active_stack].activate()
-	if Input.is_action_just_pressed("ui_up"):
+	if started and Input.is_action_just_pressed("ui_up"):
 		pick_up()
-	if Input.is_action_just_pressed("ui_down"):
+	if started and Input.is_action_just_pressed("ui_down"):
 		put_down()
 
 func pick_up():
