@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dlog2cbi5ebhq"]
+
+[ext_resource type="FontFile" uid="uid://dicmck3jgdivu" path="res://fonts/Sigmar-Regular.ttf" id="1_gu5pa"]
+
+[resource]
+default_font = ExtResource("1_gu5pa")
+default_font_size = 40

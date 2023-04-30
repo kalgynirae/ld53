@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfx6fergcx7f2"]
+
+[ext_resource type="Theme" uid="uid://dlog2cbi5ebhq" path="res://themes/score_panel.tres" id="1_tk4ge"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iu2v2"]
+viewport_path = NodePath("SubViewport")
+
+[node name="ScorePanel" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(360, 60)
+
+[node name="Control" type="Control" parent="SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_tk4ge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewport/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="SubViewport/Control/HBoxContainer"]
+layout_mode = 2
+text = "Score: "
+
+[node name="Label2" type="Label" parent="SubViewport/Control/HBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+pixel_size = 0.003
+texture = SubResource("ViewportTexture_iu2v2")

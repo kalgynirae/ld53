@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://c017w2c3tshkg"]
+[gd_scene load_steps=16 format=3 uid="uid://c017w2c3tshkg"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_wr7wq"]
 [ext_resource type="PackedScene" uid="uid://col3crggpuwgb" path="res://scenes/table.tscn" id="2_f208o"]
 [ext_resource type="Texture2D" uid="uid://cvr6ol60c2dm1" path="res://assets/title-text/title-text.png" id="2_xi8ra"]
 [ext_resource type="AudioStream" uid="uid://q234q44efc82" path="res://sounds/pickup.wav" id="3_6qo5c"]
+[ext_resource type="PackedScene" uid="uid://dfx6fergcx7f2" path="res://scenes/score_panel.tscn" id="3_niq0p"]
 [ext_resource type="AudioStream" uid="uid://b62bbhfnyl357" path="res://sounds/putdown.wav" id="4_dqu62"]
 [ext_resource type="AudioStream" uid="uid://btwqx1uwkk4yc" path="res://music/music.ogg" id="5_w8c3k"]
 [ext_resource type="AudioStream" uid="uid://ccld7h8qtuly5" path="res://sounds/squeak1.wav" id="7_gmf0r"]
@@ -31,100 +32,12 @@ glow_intensity = 1.0
 glow_strength = 0.9
 glow_hdr_threshold = 0.8
 
-[sub_resource type="Animation" id="Animation_u1m8j"]
-resource_name = "pan_in"
-length = 6.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [Vector3(0, 0.710555, 2.57529), Vector3(0, 0.627653, 2.11893)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera3D:fov")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.5),
-"transitions": PackedFloat32Array(0.5, 1),
-"update": 0,
-"values": [45.0, 40.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite3D:rotation")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.8, 5.4, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.349066, 0, 0), Vector3(0.314159, 0, 0), Vector3(-0.279253, 0, 0), Vector3(0.244346, 0, 0), Vector3(-0.20944, 0, 0), Vector3(0.174533, 0, 0), Vector3(-0.139626, 0, 0), Vector3(0.10472, 0, 0), Vector3(-0.0698132, 0, 0), Vector3(0.0349066, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("squeak1:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.3, 1.5, 2.7, 3.9, 5.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("squeak2:playing")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0.9, 2.1, 3.3, 4.5, 5.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [true, true, true, true, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("squeak1:volume_db")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-12.0, -24.0]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("squeak2:volume_db")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat32Array(0, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-12.0, -24.0]
-}
-
 [sub_resource type="Animation" id="Animation_2lgxr"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite3D:rotation")
+tracks/0/path = NodePath("TitleText:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -182,6 +95,94 @@ tracks/4/keys = {
 "values": [-16.0]
 }
 
+[sub_resource type="Animation" id="Animation_u1m8j"]
+resource_name = "pan_in"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, 0.710555, 2.57529), Vector3(0, 0.627653, 2.11893)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:fov")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [45.0, 40.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TitleText:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8, 2.4, 3, 3.6, 4.2, 4.8, 5.4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.349066, 0, 0), Vector3(0.314159, 0, 0), Vector3(-0.279253, 0, 0), Vector3(0.244346, 0, 0), Vector3(-0.20944, 0, 0), Vector3(0.174533, 0, 0), Vector3(-0.139626, 0, 0), Vector3(0.10472, 0, 0), Vector3(-0.0698132, 0, 0), Vector3(0.0349066, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("squeak1:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 1.5, 2.7, 3.9, 5.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("squeak2:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.9, 2.1, 3.3, 4.5, 5.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("squeak1:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-12.0, -24.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("squeak2:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-12.0, -24.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_y2pef"]
 _data = {
 "RESET": SubResource("Animation_2lgxr"),
@@ -224,11 +225,14 @@ light_color = Color(1, 0.4, 0.901961, 1)
 shadow_enabled = true
 shadow_opacity = 0.5
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="TitleText" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23974, -0.59195)
 offset = Vector2(0, -110)
 pixel_size = 0.002
 texture = ExtResource("2_xi8ra")
+
+[node name="ScorePanel" parent="." instance=ExtResource("3_niq0p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40302, 0.697193, -0.590429)
 
 [node name="Table" parent="." instance=ExtResource("2_f208o")]
 
@@ -251,4 +255,4 @@ volume_db = -16.0
 
 [node name="squeak2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_vd7g1")
-volume_db = -12.0
+volume_db = -16.0
